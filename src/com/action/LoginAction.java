@@ -13,6 +13,7 @@ public class LoginAction implements Action, ServletResponseAware {
 	private String username;
 	private String password;
 	private HttpServletResponse response;
+	private int i;
 	
 	@Override
 	public void setServletResponse(HttpServletResponse response) {
@@ -36,11 +37,11 @@ public class LoginAction implements Action, ServletResponseAware {
 			Cookie c = new Cookie("user", getUsername());
 			c.setMaxAge(60*60);
 			response.addCookie(c);
-			ctx.put("tip", "µÇÂ¼³É¹¦");
+			ctx.put("tip", "ï¿½ï¿½Â¼ï¿½É¹ï¿½");
 			return SUCCESS;
 			
 		}
-		ctx.put("tip", "µÇÂ¼Ê§°Ü");
+		ctx.put("tip", "ï¿½ï¿½Â¼Ê§ï¿½ï¿½");
 		return ERROR;
 	}
 
